@@ -1,9 +1,9 @@
 package com.intelij.springboot01.javapack.config.auth;
 
+import com.intelij.springboot01.javapack.config.auth.dto.OAuthAttributes;
+import com.intelij.springboot01.javapack.config.auth.dto.SessionUser;
 import com.intelij.springboot01.javapack.domain.user.User;
 import com.intelij.springboot01.javapack.domain.user.UserRepository;
-import com.intelij.springboot01.javapack.domain.user.dto.OAuthAttributes;
-import com.intelij.springboot01.javapack.domain.user.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;

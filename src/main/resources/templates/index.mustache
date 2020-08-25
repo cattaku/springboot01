@@ -12,6 +12,18 @@
         <div class="row">
             <div class="col-md-6">
                 <a href="/posts/save" role="button" class="btn btn-primary">글쓰기</a>
+
+                <!--머스테치는 if을 제공하지 않고 true/false 여부만 판단하기 때문에 항상 최종값을 넘겨줘야 한다.-->
+                {{#userName}}
+                    Logged in as: <span id="user">{{userName}}</span>
+                    <a href="/logout" class="btn btn-info active" role="button">Logout</a> <!--스프링 시큐리티에서 제공하는 로그아웃-->
+                {{/userName}}
+
+                <!--머스테치에서 해당 값이 존재하지 않을 경우에는 ^를 사용 else문 같은 역할-->
+                {{^userName}}
+                    <!--스프링 시큐리티에서 제공하는 로그아웃 url -> "/oauth2/authorization/google"-->
+                    <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                {{/userName}}
             </div>
         </div>
     </div>
@@ -32,7 +44,7 @@
             <td>{{id}}</td>
             <td><a href="/posts/update/{{id}}">{{title}}</a></td>
             <td>{{author}}</td>
-            <td>{{modifiedDate}}</td>
+            <td>{{modifiedDate}}</td>  <!--수정일 한글로 시분까지만 출력되도록 수정할 것-->
         </tr>
         {{/list}}
         </tbody>

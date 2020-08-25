@@ -1,4 +1,4 @@
-package com.intelij.springboot01.javapack.domain.user.dto;
+package com.intelij.springboot01.javapack.config.auth.dto;
 
 import com.intelij.springboot01.javapack.domain.user.Role;
 import com.intelij.springboot01.javapack.domain.user.User;
