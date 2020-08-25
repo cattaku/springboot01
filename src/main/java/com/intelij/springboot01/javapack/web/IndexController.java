@@ -24,7 +24,7 @@ public class IndexController {
     public String index(Model model, @LoginUser SessionUser user){
         model.addAttribute("list", postsService.findAllDesc());
        /* SessionUser user = (SessionUser) httpSession.getAttribute("user");
-       *  @LoginUser 생성으로 반복코드 개선*/
+       *  @LoginUser 생성으로 반복코드 개선 **/
         if(user != null) {
             model.addAttribute("userName", user.getName());
         }
