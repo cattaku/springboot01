@@ -1,5 +1,6 @@
 package com.intelij.springboot01.javapack.web;
 
+import com.intelij.springboot01.javapack.config.auth.LoginUser;
 import com.intelij.springboot01.javapack.config.auth.dto.SessionUser;
 import com.intelij.springboot01.javapack.service.PostsService;
 import com.intelij.springboot01.javapack.web.dto.PostsResponseDto;
@@ -20,9 +21,10 @@ public class IndexController {
 
     //리스트
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
         model.addAttribute("list", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+       /* SessionUser user = (SessionUser) httpSession.getAttribute("user");
+       *  @LoginUser 생성으로 반복코드 개선*/
         if(user != null) {
             model.addAttribute("userName", user.getName());
         }
