@@ -3,6 +3,12 @@
 REPOSITORY=/home/ec2-user/app/step2
 PROJECT_NAME=springboot01
 
+echo "> Git Pull"
+git pull
+
+echo "> 프로젝트 Build 시작"
+./gradlew build
+
 echo "> Build 파일 복사"
 
 cp $REPOSITORY/zip/*.jar $REPOSITORY/
